@@ -5,12 +5,25 @@
 
 body {
   background-color: #f7b977;
+  font-family: sans-serif;
 }
 
 header {
-  font-family: sans-serif;
   text-align: left;
   background-color: #e4007f;
   color: #ffffff;
   padding: 20px;
+}
+
+.inputArea {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+label,
+input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
