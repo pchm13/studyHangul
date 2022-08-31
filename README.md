@@ -1,2 +1,1 @@
-# studyHangul
-Created with CodeSandbox
+# 歌詞でハングルを勉強するApp
