@@ -1,10 +1,13 @@
 import "./styles.css";
 
-export default function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>歌詞でハングルを勉強するApp</h1>
-      <h2>Start!</h2>
-    </div>
+    <>
+        <header>
+            <h3>歌詞でハングルを勉強するApp</h3>
+        </header>
+    </>
   );
 }
+
+export default App
