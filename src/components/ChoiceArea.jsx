@@ -2,19 +2,23 @@ import { useState } from "react"
 
 const ChoiceArea = () => {
     const [songTitle, setSongTitle] = useState(['talk That talk','SCIENTIST', 'Alcohol-Free'])
+    const [songPhoto, setSongPhoto] = useState(['../img/animal_inu.png', '../img/dog_corgi_tricolor.png', '../img/dog_shetland_sheepdog_blue_merle.png'])
     return (
         <>
             <div class="choiceArea">
-                {songTitle.map((song)=>{
-                    return (
-                        <div class="song" key={song}>
-                            {/* ジャケ写表示 */}
-                            <img class="photo" src="" />
-                            {/* 登録曲名表示 */}
-                            <p class="title">{song}</p>
-                        </div>
-                    )
-                })}
+                <div class="song" key={songTitle[0]}>
+                    {/* todo一応コードは書いてるけど画像表示はされてないから、また考える */}
+                    <img class="photo" src={songPhoto[0]} />
+                    <p class="title">{songTitle[0]}</p>
+                </div>
+                <div class="song" key={songTitle[1]}>
+                    <img class="photo" src={songPhoto[1]} />
+                    <p class="title">{songTitle[1]}</p>
+                </div>
+                <div class="song" key={songTitle[2]}>
+                    <img class="photo" src={songPhoto[2]} />
+                    <p class="title">{songTitle[2]}</p>
+                </div>
             </div>
         </>
     )
