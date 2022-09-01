@@ -5,13 +5,10 @@ const ChoiceArea = () => {
     return (
         <>
             <div class="choiceArea">
-                {songTitle.map((song)=>{
+                {songTitle.map((title)=>{
                     return (
-                        <div class="song" key={song}>
-                            {/* ジャケ写表示 */}
-                            <img class="photo" src="" />
-                            {/* 登録曲名表示 */}
-                            <p class="title">{song}</p>
+                        <div class="song" key={title}>
+                            <p class="title">{title}</p>
                         </div>
                     )
                 })}
