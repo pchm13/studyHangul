@@ -41,5 +41,16 @@ input {
   display: inline-block;
   background-color: #ffffff;
   margin: 20px;
+  padding: 10px;
   border-radius: 10px;
+}
+
+/* detailArea */
+.detailArea {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-right: 350px;
+  margin-left: 350px;
+  border-radius: 30px;
 }
