@@ -1,21 +1,20 @@
+import { useState } from "react"
+
 const ChoiceArea = () => {
+    const [songTitle, setSongTitle] = useState(['talk That talk','SCIENTIST', 'Alcohol-Free'])
     return (
         <>
             <div class="choiceArea">
-                <div class="song">
-                    {/* ジャケ写表示 */}
-                    <img class="photo" src="" />
-                    {/* 登録曲名表示 */}
-                    <p class="title">talk That talk</p>
-                </div>
-                <div class="song">
-                    <img class="photo" src="" />
-                    <p class="title">SCIENTIST</p>
-                </div>
-                <div class="song">
-                    <img class="photo" src="" />
-                    <p class="title">Alcohol-Free</p>
-                </div>
+                {songTitle.map((song)=>{
+                    return (
+                        <div class="song" key={song}>
+                            {/* ジャケ写表示 */}
+                            <img class="photo" src="" />
+                            {/* 登録曲名表示 */}
+                            <p class="title">{song}</p>
+                        </div>
+                    )
+                })}
             </div>
         </>
     )
