@@ -2,6 +2,7 @@ import { useState } from "react"
 
 const ChoiceArea = () => {
     const [songTitle, setSongTitle] = useState(['talk That talk','SCIENTIST', 'Alcohol-Free'])
+    
     return (
         <>
             <div class="choiceArea">
