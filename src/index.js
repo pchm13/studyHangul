@@ -6,8 +6,8 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
-  // StrictModeとは、"アプリケーションの潜在的な問題点を洗い出すためのツール"
-  <StrictMode>
-    <App />
-  </StrictMode>
+    // StrictModeとは、"アプリケーションの潜在的な問題点を洗い出すためのツール"
+    <StrictMode>
+        <App />
+    </StrictMode>
 );
