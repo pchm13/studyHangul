@@ -1,18 +1,20 @@
 import "./styles.css";
+import { useState } from "react"
 
 const App = () => {
+    // 入力値
     const [title, setTitle] = useState('')
     const [language, setLanguage] = useState('')
     const [lyric, setLyric] = useState('')
-    // const [songTitle, setSongTitle] = useState(['talk That talk','SCIENTIST', 'Alcohol-Free'])
+    // 既に登録された曲
+    const [songs, setSong] = useState([])
     
     const onChangeInputTitle = (e) => setTitle(e.target.value)
     const onChangeInputLyric = (e) => setLyric(e.target.value)
     const onChangeInputLanguage = (e) => setLanguage(e.target.value)
     const onClickAdd = () => {
-        const newSongTitle = [...title, title]
-        const newSongLanguage = [...language, title]
-        const newSongTitle = [...title, title]
+        const newSong = [...songs, [title, language, lyric]]
+        setSong(newSong)
     }
     
     return (
@@ -34,10 +36,10 @@ const App = () => {
             </div>
             
             <div className="choiceArea">
-                {songTitle.map((title)=>{
+                {songs.map((song)=>{
                     return (
-                        <div className="song" key={title}>
-                            <p className="title">{title}</p>
+                        <div className="song" key={song[0]}>
+                            <p className="title">{song[0]}</p>
                         </div>
                     )
                 })}
