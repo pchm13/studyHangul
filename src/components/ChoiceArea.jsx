@@ -5,11 +5,11 @@ const ChoiceArea = () => {
     
     return (
         <>
-            <div class="choiceArea">
+            <div className="choiceArea">
                 {songTitle.map((title)=>{
                     return (
-                        <div class="song" key={title}>
-                            <p class="title">{title}</p>
+                        <div className="song" key={title}>
+                            <p className="title">{title}</p>
                         </div>
                     )
                 })}
