@@ -15,28 +15,30 @@ const App = () => {
     const onClickAdd = () => {
         const newSong = [...songs, [title, language, lyric]]
         setSong(newSong)
+        setTitle('')
+        setLanguage('')
+        setLyric('')
     }
     
     return (
         <>
             <div className="inputArea">
-                <form>
-                    <label htmlFor="title">タイトル</label>
-                    <input type="text" id="title" name="title" value={title} onChange={onChangeInputTitle} />
-                    <label htmlFor="language">言語</label>
-                    <select id="language" name="language" onChange={onChangeInputLanguage}>
-                        <option value="">選択してイムニダ</option>
-                        <option value="Japanese">日本語</option>
-                        <option value="Hangul">ハングル</option>
-                    </select>
-                    <label htmlFor="lyric">歌詞</label>
-                    <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
-                    <input type="submit" value="登録" onClick={onClickAdd} />
-                </form>
+                {/* todo サーバと通信させる時formタグ復活させる */}
+                <label htmlFor="title">タイトル</label>
+                <input type="text" id="title" name="title" value={title} onChange={onChangeInputTitle} />
+                <label htmlFor="language">言語</label>
+                <select id="language" name="language" onChange={onChangeInputLanguage}>
+                    <option value="">選択してイムニダ</option>
+                    <option value="Japanese">日本語</option>
+                    <option value="Hangul">ハングル</option>
+                </select>
+                <label htmlFor="lyric">歌詞</label>
+                <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
+                <input type="button" value="登録" onClick={onClickAdd} />
             </div>
             
             <div className="choiceArea">
-                {songs.map((song)=>{
+                {songs.map((song) => {
                     return (
                         <div className="song" key={song[0]}>
                             <p className="title">{song[0]}</p>
