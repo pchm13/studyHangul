@@ -23,18 +23,19 @@ const App = () => {
     return (
         <>
             <div className="inputArea">
-                {/* todo サーバと通信させる時formタグ復活させる */}
-                <label htmlFor="title">タイトル</label>
-                <input type="text" id="title" name="title" value={title} onChange={onChangeInputTitle} />
-                <label htmlFor="language">言語</label>
-                <select id="language" name="language" onChange={onChangeInputLanguage}>
-                    <option value="">選択してイムニダ</option>
-                    <option value="Japanese">日本語</option>
-                    <option value="Hangul">ハングル</option>
-                </select>
-                <label htmlFor="lyric">歌詞</label>
-                <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
-                <input type="button" value="登録" onClick={onClickAdd} />
+                <form>
+                    <label htmlFor="title">タイトル</label>
+                    <input type="text" id="title" name="title" value={title} onChange={onChangeInputTitle} />
+                    <label htmlFor="language">言語</label>
+                    <select id="language" name="language" onChange={onChangeInputLanguage}>
+                        <option value="">選択してイムニダ</option>
+                        <option value="Japanese">日本語</option>
+                        <option value="Hangul">ハングル</option>
+                    </select>
+                    <label htmlFor="lyric">歌詞</label>
+                    <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
+                    <input type="button" value="登録" onClick={onClickAdd} />
+                </form>
             </div>
             
             <div className="choiceArea">
@@ -48,10 +49,14 @@ const App = () => {
             </div>
             
             <div className="detailArea">
-                {/* 登録曲名表示 */}
-                <h2 className="title">SCIENTIST</h2>
-                {/* 登録歌詞表示 */}
-                <div className="lyric">aaaaa....</div>
+                {songs.map((song) => {
+                    return (
+                        <>
+                            <h2 className="title" key={song[0]}>{song[0]}</h2>
+                            <div className="lyric">{song[2]}</div>
+                        </>
+                    )
+                })}    
             </div>
         </>
     );
