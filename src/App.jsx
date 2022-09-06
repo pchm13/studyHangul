@@ -7,8 +7,9 @@ const App = () => {
     const [language, setLanguage] = useState('')
     const [lyric, setLyric] = useState('')
     // 既に登録された曲
+    // todo key設定
     const [songs, setSong] = useState([])
-    
+
     const onChangeInputTitle = (e) => setTitle(e.target.value)
     const onChangeInputLyric = (e) => setLyric(e.target.value)
     const onChangeInputLanguage = (e) => setLanguage(e.target.value)
@@ -19,9 +20,13 @@ const App = () => {
         setLanguage('')
         setLyric('')
     }
-    
+
     return (
         <>
+            <header>
+                <h3>歌詞でハングルを勉強するApp</h3>
+            </header>
+
             <div className="inputArea">
                 <form>
                     <label htmlFor="title">タイトル</label>
@@ -37,7 +42,7 @@ const App = () => {
                     <input type="button" value="登録" onClick={onClickAdd} />
                 </form>
             </div>
-            
+
             <div className="choiceArea">
                 {songs.map((song) => {
                     return (
@@ -47,7 +52,7 @@ const App = () => {
                     )
                 })}
             </div>
-            
+
             <div className="detailArea">
                 {songs.map((song) => {
                     return (
@@ -56,7 +61,7 @@ const App = () => {
                             <div className="lyric">{song[2]}</div>
                         </>
                     )
-                })}    
+                })}
             </div>
         </>
     );
