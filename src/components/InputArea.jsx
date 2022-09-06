@@ -1,16 +1,16 @@
 const InputArea = (props) => {
     const {
-        show,
+        showInput,
         title,
         onChangeInputTitle,
         onChangeInputLanguage,
         lyric,
         onChangeInputLyric,
         onClickAdd,
-        onClickClose
+        onClickInputClose
     } = props
     
-    if(show){
+    if(showInput){
         return(
             <>
                 <div className="overlay">
@@ -28,7 +28,7 @@ const InputArea = (props) => {
                             <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
                             <input type="button" value="登録" onClick={onClickAdd} />
                         </form>
-                        <button className="closeButton" onClick={onClickClose}>close</button>
+                        <button className="closeButton" onClick={onClickInputClose}>close</button>
                     </div>
                 </div>    
             </>    
