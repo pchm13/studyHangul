@@ -40,6 +40,10 @@ input {
   margin-left: auto;
 }
 
+.closeButton {
+  margin-right: 70%;
+}
+
 /* choiceArea */
 .choiceArea {
   text-align: center;

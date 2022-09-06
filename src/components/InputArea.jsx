@@ -1,5 +1,14 @@
 const InputArea = (props) => {
-    const { show, title, onChangeInputTitle, onChangeInputLanguage, lyric, onChangeInputLyric, onClickAdd } = props
+    const {
+        show,
+        title,
+        onChangeInputTitle,
+        onChangeInputLanguage,
+        lyric,
+        onChangeInputLyric,
+        onClickAdd,
+        onClickClose
+    } = props
     
     if(show){
         return(
@@ -19,6 +28,7 @@ const InputArea = (props) => {
                             <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
                             <input type="button" value="登録" onClick={onClickAdd} />
                         </form>
+                        <button className="closeButton" onClick={onClickClose}>close</button>
                     </div>
                 </div>    
             </>    

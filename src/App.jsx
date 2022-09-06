@@ -28,6 +28,10 @@ const App = () => {
     const onClickOpen = () => {
      setShow(true)   
     }
+    
+    const onClickClose = () => {
+     setShow(false)   
+    }
 
     return (
         <>
@@ -43,6 +47,7 @@ const App = () => {
                 lyric={lyric}
                 onChangeInputLyric={onChangeInputLyric}
                 onClickAdd={onClickAdd}
+                onClickClose={onClickClose}
             />
 
             <div className="choiceArea">
