@@ -6,10 +6,10 @@ const ChoiceArea = (props) => {
     
     return (
         <div className="choiceArea">
-            {songs.map((song) => {
+            {songs.map((song, index) => {
                 return (
-                    <div className="song" key={song[0]}>
-                        <p className="title" onClick={onClickLyricOpen}>{song[0]}</p>
+                    <div className="song" key={index}>
+                        <p className="title" onClick={() => onClickLyricOpen(index)}>{song[0]}</p>
                     </div>
                 )
             })}

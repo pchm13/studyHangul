@@ -1,22 +1,16 @@
 const DetailArea = (props) => {
     const {
-        songs, 
-        showLyric, 
-        onClickLyricClose
+        isDetailArea, 
+        onClickLyricClose,
+        songDetail
     } = props
     
-    if (showLyric){
+    if (isDetailArea){
         return (
             <div className="overlay">
                 <div className="detailArea">
-                    {songs.map((song) => {
-                        return (
-                            <>
-                                <h2 className="title" key={song[0]}>{song[0]}</h2>
-                                <div className="lyric">{song[2]}</div>
-                            </>
-                        )
-                    })}
+                    <h2 className="title" key={songDetail[0]}>{songDetail[0]}</h2>
+                    <div className="lyric">{songDetail[2]}</div>
                     <button className="closeButton" onClick={onClickLyricClose}>close</button>
                 </div>
             </div>
