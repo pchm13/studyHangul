@@ -1,5 +1,9 @@
 const DetailArea = (props) => {
-    const {songs, showLyric} = props
+    const {
+        songs, 
+        showLyric, 
+        onClickLyricClose
+    } = props
     
     if (showLyric){
         return (
@@ -12,6 +16,7 @@ const DetailArea = (props) => {
                         </>
                     )
                 })}
+                <button className="closeButton" onClick={onClickLyricClose}>close</button>
             </div>
         )
     }

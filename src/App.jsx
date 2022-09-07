@@ -38,6 +38,10 @@ const App = () => {
     const onClickLyricOpen = () => {
         setShowLyric(true)
     }
+    
+    const onClickLyricClose = () => {
+        setShowLyric(false)
+    }
 
     return (
         <>
@@ -64,6 +68,7 @@ const App = () => {
             <DetailArea 
                 songs={songs}
                 showLyric={showLyric}
+                onClickLyricClose={onClickLyricClose}
             />
         </>
     )
