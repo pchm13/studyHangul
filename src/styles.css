@@ -65,3 +65,7 @@ input {
   margin: 100px 350px;
   border-radius: 30px;
 }
+
+.lyric {
+  white-space: pre-wrap;
+}
