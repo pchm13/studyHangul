@@ -9,8 +9,8 @@ const DetailArea = (props) => {
         return (
             <div className="overlay">
                 <div className="detailArea">
-                    <h2 className="title" key={songDetail[0]}>{songDetail[0]}</h2>
-                    <div className="lyric">{songDetail[2]}</div>
+                    <h2 className="title">{songDetail['title']}</h2>
+                    <div className="lyric">{songDetail['lyric']}</div>
                     <button className="closeButton" onClick={onClickLyricClose}>close</button>
                 </div>
             </div>

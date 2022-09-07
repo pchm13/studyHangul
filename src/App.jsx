@@ -16,28 +16,32 @@ const App = () => {
     const onChangeInputTitle = (e) => setInputTitle(e.target.value)
     const onChangeInputLyric = (e) => setInputLyric(e.target.value)
     const onChangeInputLanguage = (e) => setInputLanguage(e.target.value)
-    
+
     const onClickAdd = () => {
-        const newSong = [...songs, [inputTitle, inputLanguage, inputLyric]]
+        const newSong = [...songs, {
+            title: inputTitle,
+            language: inputLanguage,
+            lyric: inputLyric
+        }]
         setSongs(newSong)
         setInputTitle('')
         setInputLanguage('')
         setInputLyric('')
     }
-    
+
     const onClickInputOpen = () => {
-        setIsInputArea(true)   
+        setIsInputArea(true)
     }
-    
+
     const onClickInputClose = () => {
-        setIsInputArea(false)   
+        setIsInputArea(false)
     }
-    
+
     const onClickLyricOpen = (index) => {
         setIsDetailArea(true)
         setSongDetail(songs[index])
     }
-    
+
     const onClickLyricClose = () => {
         setIsDetailArea(false)
     }
@@ -48,9 +52,9 @@ const App = () => {
                 <h3>歌詞でハングルを勉強するApp</h3>
             </header>
 
-            <InputArea 
-                isInputArea={isInputArea} 
-                inputTitle={inputTitle} 
+            <InputArea
+                isInputArea={isInputArea}
+                inputTitle={inputTitle}
                 onChangeInputTitle={onChangeInputTitle}
                 onChangeInputLanguage={onChangeInputLanguage}
                 inputLyric={inputLyric}
@@ -64,7 +68,7 @@ const App = () => {
                 onClickLyricOpen={onClickLyricOpen}
             />
 
-            <DetailArea 
+            <DetailArea
                 isDetailArea={isDetailArea}
                 onClickLyricClose={onClickLyricClose}
                 songDetail={songDetail}

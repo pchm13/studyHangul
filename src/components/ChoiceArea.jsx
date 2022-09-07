@@ -9,7 +9,7 @@ const ChoiceArea = (props) => {
             {songs.map((song, index) => {
                 return (
                     <div className="song" key={index}>
-                        <p className="title" onClick={() => onClickLyricOpen(index)}>{song[0]}</p>
+                        <p className="title" onClick={() => onClickLyricOpen(index)}>{song['title']}</p>
                     </div>
                 )
             })}
