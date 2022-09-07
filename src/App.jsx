@@ -6,26 +6,22 @@ import DetailArea from "./components/DetailArea"
 
 const App = () => {
     const [inputTitle, setInputTitle] = useState('')
-    const [inputLanguage, setInputLanguage] = useState('')
     const [inputLyric, setInputLyric] = useState('')
-    const [songs, setSongs] = useState([]) // todo key設定
+    const [songs, setSongs] = useState([])
     const [isInputArea, setIsInputArea] = useState(false)
     const [isDetailArea, setIsDetailArea] = useState(false)
     const [songDetail, setSongDetail] = useState('')
 
     const onChangeInputTitle = (e) => setInputTitle(e.target.value)
     const onChangeInputLyric = (e) => setInputLyric(e.target.value)
-    const onChangeInputLanguage = (e) => setInputLanguage(e.target.value)
 
     const onClickAdd = () => {
         const newSong = [...songs, {
             title: inputTitle,
-            language: inputLanguage,
             lyric: inputLyric
         }]
         setSongs(newSong)
         setInputTitle('')
-        setInputLanguage('')
         setInputLyric('')
     }
 
@@ -56,7 +52,6 @@ const App = () => {
                 isInputArea={isInputArea}
                 inputTitle={inputTitle}
                 onChangeInputTitle={onChangeInputTitle}
-                onChangeInputLanguage={onChangeInputLanguage}
                 inputLyric={inputLyric}
                 onChangeInputLyric={onChangeInputLyric}
                 onClickAdd={onClickAdd}
