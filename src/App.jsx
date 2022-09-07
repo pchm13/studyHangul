@@ -1,75 +1,73 @@
 import "./styles.css";
 import { useState } from "react"
 import InputArea from "./components/InputArea"
+import ChoiceArea from "./components/ChoiceArea"
+import DetailArea from "./components/DetailArea"
 
 const App = () => {
-    // 入力値
-    const [title, setTitle] = useState('')
-    const [language, setLanguage] = useState('')
-    const [lyric, setLyric] = useState('')
-    // 既に登録された曲
-    // todo key設定
-    const [songs, setSong] = useState([])
-    // todo 命名考える
-    const [show, setShow] = useState(false)
+    const [inputTitle, setInputTitle] = useState('')
+    const [inputLyric, setInputLyric] = useState('')
+    const [songs, setSongs] = useState([])
+    const [isInputArea, setIsInputArea] = useState(false)
+    const [isDetailArea, setIsDetailArea] = useState(false)
+    const [songDetail, setSongDetail] = useState('')
 
-    const onChangeInputTitle = (e) => setTitle(e.target.value)
-    const onChangeInputLyric = (e) => setLyric(e.target.value)
-    const onChangeInputLanguage = (e) => setLanguage(e.target.value)
-    
+    const onChangeInputTitle = (e) => setInputTitle(e.target.value)
+    const onChangeInputLyric = (e) => setInputLyric(e.target.value)
+
     const onClickAdd = () => {
-        const newSong = [...songs, [title, language, lyric]]
-        setSong(newSong)
-        setTitle('')
-        setLanguage('')
-        setLyric('')
+        const newSong = [...songs, {
+            title: inputTitle,
+            lyric: inputLyric
+        }]
+        setSongs(newSong)
+        setInputTitle('')
+        setInputLyric('')
     }
-    
-    const onClickOpen = () => {
-     setShow(true)   
+
+    const onClickInputOpen = () => {
+        setIsInputArea(true)
     }
-    
-    const onClickClose = () => {
-     setShow(false)   
+
+    const onClickInputClose = () => {
+        setIsInputArea(false)
+    }
+
+    const onClickLyricOpen = (index) => {
+        setIsDetailArea(true)
+        setSongDetail(songs[index])
+    }
+
+    const onClickLyricClose = () => {
+        setIsDetailArea(false)
     }
 
     return (
         <>
-            <header onClick={onClickOpen}>
+            <header onClick={onClickInputOpen}>
                 <h3>歌詞でハングルを勉強するApp</h3>
             </header>
 
-            <InputArea 
-                show={show} 
-                title={title} 
+            <InputArea
+                isInputArea={isInputArea}
+                inputTitle={inputTitle}
                 onChangeInputTitle={onChangeInputTitle}
-                onChangeInputLanguage={onChangeInputLanguage}
-                lyric={lyric}
+                inputLyric={inputLyric}
                 onChangeInputLyric={onChangeInputLyric}
                 onClickAdd={onClickAdd}
-                onClickClose={onClickClose}
+                onClickInputClose={onClickInputClose}
             />
 
-            <div className="choiceArea">
-                {songs.map((song) => {
-                    return (
-                        <div className="song" key={song[0]}>
-                            <p className="title">{song[0]}</p>
-                        </div>
-                    )
-                })}
-            </div>
+            <ChoiceArea
+                songs={songs}
+                onClickLyricOpen={onClickLyricOpen}
+            />
 
-            <div className="detailArea">
-                {songs.map((song) => {
-                    return (
-                        <>
-                            <h2 className="title" key={song[0]}>{song[0]}</h2>
-                            <div className="lyric">{song[2]}</div>
-                        </>
-                    )
-                })}
-            </div>
+            <DetailArea
+                isDetailArea={isDetailArea}
+                onClickLyricClose={onClickLyricClose}
+                songDetail={songDetail}
+            />
         </>
     )
 }

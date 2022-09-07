@@ -1,34 +1,27 @@
 const InputArea = (props) => {
     const {
-        show,
-        title,
+        isInputArea,
+        inputTitle,
         onChangeInputTitle,
-        onChangeInputLanguage,
-        lyric,
+        inputLyric,
         onChangeInputLyric,
         onClickAdd,
-        onClickClose
+        onClickInputClose
     } = props
     
-    if(show){
+    if(isInputArea){
         return(
             <>
                 <div className="overlay">
                     <div className="inputArea">
                         <form>
                             <label htmlFor="title">タイトル</label>
-                            <input type="text" id="title" name="title" value={title} onChange={onChangeInputTitle} />
-                            <label htmlFor="language">言語</label>
-                            <select id="language" name="language" onChange={onChangeInputLanguage}>
-                                <option value="">選択してイムニダ</option>
-                                <option value="Japanese">日本語</option>
-                                <option value="Hangul">ハングル</option>
-                            </select>
+                            <input type="text" id="title" name="title" value={inputTitle} onChange={onChangeInputTitle} />
                             <label htmlFor="lyric">歌詞</label>
-                            <textarea id="lyric" name="lyric" rows="10" cols="50" value={lyric} onChange={onChangeInputLyric} />
+                            <textarea id="lyric" name="lyric" rows="10" cols="50" value={inputLyric} onChange={onChangeInputLyric} />
                             <input type="button" value="登録" onClick={onClickAdd} />
                         </form>
-                        <button className="closeButton" onClick={onClickClose}>close</button>
+                        <button className="closeButton" onClick={onClickInputClose}>close</button>
                     </div>
                 </div>    
             </>    
