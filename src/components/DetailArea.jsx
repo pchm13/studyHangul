@@ -1,11 +1,11 @@
 const DetailArea = (props) => {
     const {
-        isDetailArea, 
+        isDetailArea,
         onClickLyricClose,
         songDetail
     } = props
-    
-    if (isDetailArea){
+
+    if (isDetailArea) {
         return (
             <div className="overlay">
                 <div className="detailArea">

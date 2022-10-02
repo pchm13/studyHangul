@@ -3,7 +3,7 @@ const ChoiceArea = (props) => {
         songs,
         onClickLyricOpen
     } = props
-    
+
     return (
         <div className="choiceArea">
             {songs.map((song, index) => {

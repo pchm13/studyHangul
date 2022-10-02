@@ -8,9 +8,9 @@ const InputArea = (props) => {
         onClickAdd,
         onClickInputClose
     } = props
-    
-    if(isInputArea){
-        return(
+
+    if (isInputArea) {
+        return (
             <>
                 <div className="overlay">
                     <div className="inputArea">
@@ -23,9 +23,9 @@ const InputArea = (props) => {
                         </form>
                         <button className="closeButton" onClick={onClickInputClose}>close</button>
                     </div>
-                </div>    
-            </>    
-        )   
+                </div>
+            </>
+        )
     }
 }
 
